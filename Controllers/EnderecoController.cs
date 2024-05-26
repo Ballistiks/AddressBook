@@ -41,6 +41,11 @@ namespace AddressBook.Controllers
 			return RedirectToAction("Index");
 		}
 
+		public IActionResult Alterar(EnderecoModel endereco)
+		{
+			endRepositorio.AtualizarEndereco(endereco);
+			return RedirectToAction("Index");
+		}
 
 		public FileContentResult Exportar()
 		{
