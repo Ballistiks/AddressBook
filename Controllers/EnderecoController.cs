@@ -23,9 +23,10 @@ namespace AddressBook.Controllers
 			return View();
 		}
 
-		public IActionResult Editar()
+		public IActionResult Editar(int id)
 		{
-			return View();
+			EnderecoModel endereco = endRepositorio.ListarID(id);
+			return View(endereco);
 		}
 
 		public IActionResult Deletar()
