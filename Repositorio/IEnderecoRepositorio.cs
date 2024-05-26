@@ -8,8 +8,10 @@ namespace AddressBook.Repositorio
 		EnderecoModel NovoEndereco(EnderecoModel endereco);
 
 		EnderecoModel AtualizarEndereco(EnderecoModel endereco);
+
 		List<EnderecoModel> ShowAll();
 
+		bool Delete(int id);
 
 
 	}

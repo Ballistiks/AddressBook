@@ -29,6 +29,14 @@ namespace AddressBook.Repositorio
 			return enderecoDB;
 		}
 
+		public bool Delete(int id)
+		{
+			EnderecoModel enderecoDB = ListarID(id) ?? throw new Exception("Problema Detectado!");
+			dbContext.Enderecos.Remove(enderecoDB);
+			dbContext.SaveChanges();
+			return true;
+		}
+
 		public EnderecoModel ListarID(int id)
 		{
 			var endereco = dbContext.Enderecos.FirstOrDefault(x => x.Id == id);
