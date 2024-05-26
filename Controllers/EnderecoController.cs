@@ -28,7 +28,7 @@ namespace AddressBook.Controllers
 
 
 
-		public FileContentResult Exportar()
+		/*public FileContentResult Exportar()
 		{
 			string csv = "\"Usuario_Id\",\"Logradoura\",\"Bairro\",\"Complemento\",\"Cidade\",\"UF\" \n";
 			var enderecos = ""
@@ -45,7 +45,7 @@ namespace AddressBook.Controllers
 			//StringWriter sw = new StringWriter();
 			//sw.WriteLine("\"ID\",\"Title\",\"Release Date\",\"Genere\",\"Price\",\"Rating\"");
 			return File(new System.Text.UTF8Encoding().GetBytes(csv), "text/csv", "Enderecos.csv");
-		}
+		}*/
 
 
 
