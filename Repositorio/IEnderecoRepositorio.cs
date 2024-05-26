@@ -6,6 +6,8 @@ namespace AddressBook.Repositorio
 	{
 		EnderecoModel ListarID(int id);
 		EnderecoModel NovoEndereco(EnderecoModel endereco);
+
+		EnderecoModel AtualizarEndereco(EnderecoModel endereco);
 		List<EnderecoModel> ShowAll();
 
 
