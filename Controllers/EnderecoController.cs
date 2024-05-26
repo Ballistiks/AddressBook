@@ -29,7 +29,7 @@ namespace AddressBook.Controllers
 			EnderecoModel endereco = endRepositorio.ListarID(id);
 			return View(endereco);
 		}
-		
+
 		public IActionResult DeletarConfirmacao(int id)
 		{
 			EnderecoModel endereco = endRepositorio.ListarID(id);
@@ -46,14 +46,22 @@ namespace AddressBook.Controllers
 		[HttpPost]
 		public IActionResult Novo(EnderecoModel endereco)
 		{
-			endRepositorio.NovoEndereco(endereco);
-			return RedirectToAction("Index");
+			if (ModelState.IsValid)
+			{
+				endRepositorio.NovoEndereco(endereco);
+				return RedirectToAction("Index");
+			}
+			return View(endereco);
 		}
 
 		public IActionResult Alterar(EnderecoModel endereco)
 		{
-			endRepositorio.AtualizarEndereco(endereco);
-			return RedirectToAction("Index");
+			if (ModelState.IsValid)
+			{
+				endRepositorio.AtualizarEndereco(endereco);
+				return RedirectToAction("Index");
+			}
+			return View(endereco);
 		}
 
 		public FileContentResult Exportar()
