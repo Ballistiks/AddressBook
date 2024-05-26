@@ -43,11 +43,11 @@ namespace AddressBook.Controllers
 
 		public FileContentResult Exportar()
 		{
-			string csv = "\"Logradouro\",\"Bairro\",\"Complemento\",\"Cidade\",\"UF\" \n";
+			string csv = "\"Logradouro\";\"Bairro\";\"Complemento\";\"Cidade\";\"UF\" \n";
 			var enderecos = endRepositorio.ShowAll();
 			foreach (var lista in enderecos)
 			{
-				csv = csv + string.Format("\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\" \n",
+				csv = csv + string.Format("\"{0}\";\"{1}\";\"{2}\";\"{3}\";\"{4}\" \n",
 					lista.Logradouro,
 					lista.Bairro,
 					lista.Complemento,

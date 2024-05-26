@@ -1,4 +1,5 @@
 ﻿using AddressBook.Data;
+using AddressBook.Migrations;
 using AddressBook.Models;
 using Microsoft.Identity.Client;
 
@@ -14,6 +15,12 @@ namespace AddressBook.Repositorio
 			dbContext = databaseContext;
 		}
 
+		public EnderecoModel ListarID(int id)
+		{
+			var endereco = dbContext.Enderecos.FirstOrDefault(x => x.Id == id);
+			return endereco ?? new EnderecoModel();
+		}
+
 		public EnderecoModel NovoEndereco(EnderecoModel endereco)
 		{
 			dbContext.Enderecos.Add(endereco);
@@ -23,7 +30,7 @@ namespace AddressBook.Repositorio
 
 		public List<EnderecoModel> ShowAll()
 		{
-			return [.. dbContext.Enderecos]; 
+			return [.. dbContext.Enderecos];
 		}
 	}
 }
