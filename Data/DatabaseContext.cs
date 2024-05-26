@@ -6,5 +6,6 @@ namespace AddressBook.Data
 	public class DatabaseContext(DbContextOptions<DatabaseContext> options) : DbContext(options)
 	{
 		public DbSet<EnderecoModel> Enderecos { get; set; }
+		public DbSet<UsuarioModel> Usuarios { get; set; }
 	}
 }

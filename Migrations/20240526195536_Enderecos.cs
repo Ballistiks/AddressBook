@@ -20,8 +20,8 @@ namespace AddressBook.Migrations
                     Complemento = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: true),
                     Bairro = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: true),
                     Cidade = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: true),
-                    UF = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: true),
-                    Cep = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true)
+                    UF = table.Column<string>(type: "nchar(3)", maxLength: 3, nullable: true),
+                    Cep = table.Column<string>(type: "nchar(10)", maxLength: 10, nullable: true)
                 },
                 constraints: table =>
                 {
