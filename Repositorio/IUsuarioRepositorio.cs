@@ -4,6 +4,6 @@ namespace AddressBook.Repositorio
 {
     public interface IUsuarioRepositorio
     {
-        UsuarioModel NovoUsuario(UsuarioModel endereco);
+        UsuarioModel NovoUsuario(UsuarioModel usuario);
     }
 }

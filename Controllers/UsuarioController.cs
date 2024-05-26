@@ -4,36 +4,38 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AddressBook.Controllers
 {
-    public class UsuarioController : Controller
-    {
-        private readonly IUsuarioRepositorio usrRepositorio;
-        public UsuarioController(IUsuarioRepositorio usuarioRepositorio)
-        {
-            usrRepositorio = usuarioRepositorio;
-        }
-        public IActionResult Index()
-        {
-            return View();
-        }
+	public class UsuarioController : Controller
+	{
+		private readonly IUsuarioRepositorio usrRepositorio;
+		public UsuarioController(IUsuarioRepositorio usuarioRepositorio)
+		{
+			usrRepositorio = usuarioRepositorio;
+		}
+		public IActionResult Index()
+		{
+			return View();
+		}
 
-        public IActionResult Novo()
-        {
-            return View();
-        }
+		public IActionResult Novo()
+		{
+			return View();
+		}
 
-        [HttpPost]
-        public IActionResult Novo(UsuarioModel Usuario)
-        {
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult Novo(UsuarioModel usuario)
+		{
 
-            if (ModelState.IsValid)
-            {
-                usrRepositorio.NovoUsuario(Usuario);
+			if (ModelState.IsValid)
+			{
+				usuario.Senha = "";
+				usrRepositorio.NovoUsuario(usuario);
 
-                return RedirectToAction("Index");
-            }
-            return View(Usuario);
+				return RedirectToAction("Index");
+			}
+			return View(usuario);
 
-        }
+		}
 
-    }
+	}
 }

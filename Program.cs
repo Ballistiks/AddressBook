@@ -1,6 +1,8 @@
 using AddressBook.Data;
 using AddressBook.Repositorio;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using ScottBrady91.AspNetCore.Identity;
 
 namespace AddressBook
 {

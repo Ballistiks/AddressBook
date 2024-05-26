@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Konscious.Security.Cryptography;
 
 namespace AddressBook.Models
 {
@@ -16,5 +17,10 @@ namespace AddressBook.Models
 
 		[MaxLength(255)]
 		public string? Senha { get; set; }
+
+		public bool SenhaValida(string senha)
+		{
+			return Senha == senha;
+		}
 	}
 }
