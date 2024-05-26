@@ -1,11 +1,17 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AddressBook.Models;
+using AddressBook.Repositorio;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AddressBook.Controllers
 {
 	public class EnderecoController : Controller
 	{
-
+		private readonly IEnderecoRepositorio endRepositorio;
+		public EnderecoController(IEnderecoRepositorio enderecoRepositorio)
+		{
+			endRepositorio = enderecoRepositorio;
+		}
 		public IActionResult Index()
 		{
 			return View();
@@ -26,6 +32,12 @@ namespace AddressBook.Controllers
 			return View();
 		}
 
+		[HttpPost]
+		public IActionResult Novo(EnderecoModel endereco)
+		{
+			endRepositorio.NovoEndereco(endereco);
+			return RedirectToAction("Index");
+		}
 
 
 		/*public FileContentResult Exportar()
