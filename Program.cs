@@ -1,13 +1,10 @@
 using AddressBook.Data;
-using AddressBook.Models;
 using AddressBook.Repositorio;
-using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using Vereyon.Web;
 
 namespace AddressBook
 {
-	public class Program
+	public static class Program
 	{
 		public static void Main(string[] args)
 		{
@@ -26,7 +23,6 @@ namespace AddressBook
 					)
 				)
 			);
-			builder.Services.AddFlashMessage();
 
 			builder.Services.AddScoped<IEnderecoRepositorio, EnderecoRepositorio>();
 

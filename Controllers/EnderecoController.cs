@@ -1,9 +1,6 @@
-﻿using AddressBook.Migrations;
-using AddressBook.Models;
+﻿using AddressBook.Models;
 using AddressBook.Repositorio;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Vereyon.Web;
 
 namespace AddressBook.Controllers
 {
