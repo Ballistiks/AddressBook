@@ -3,6 +3,7 @@ using AddressBook.Models;
 using AddressBook.Repositorio;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Vereyon.Web;
 
 namespace AddressBook
 {
@@ -25,7 +26,7 @@ namespace AddressBook
 					)
 				)
 			);
-
+			builder.Services.AddFlashMessage();
 
 			builder.Services.AddScoped<IEnderecoRepositorio, EnderecoRepositorio>();
 
