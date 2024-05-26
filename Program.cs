@@ -1,3 +1,6 @@
+using AddressBook.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace AddressBook
 {
 	public class Program
@@ -8,6 +11,17 @@ namespace AddressBook
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
+
+			builder.Services.AddDbContext<DatabaseContext>(options =>
+				options.UseSqlServer(
+					builder.Configuration.GetConnectionString("DBAddress"),
+				options => options.EnableRetryOnFailure(
+					maxRetryCount: 500,
+					maxRetryDelay: System.TimeSpan.FromSeconds(30),
+					errorNumbersToAdd: null
+					)
+				)
+			);
 
 			var app = builder.Build();
 
