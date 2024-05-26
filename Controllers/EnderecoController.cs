@@ -43,7 +43,7 @@ namespace AddressBook.Controllers
 
 		public IActionResult Deletar(int id)
 		{
-			EnderecoModel endereco = endRepositorio.Delete(id);
+			endRepositorio.Delete(id);
 			return RedirectToAction("Index");
 		}
 
