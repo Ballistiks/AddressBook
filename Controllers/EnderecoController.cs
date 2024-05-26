@@ -41,6 +41,13 @@ namespace AddressBook.Controllers
 			return View(endereco);
 		}
 
+		public IActionResult Deletar(int id)
+		{
+			EnderecoModel endereco = endRepositorio.Delete(id);
+			return RedirectToAction("Index");
+		}
+
+
 		[HttpPost]
 		public IActionResult Novo(EnderecoModel endereco)
 		{
