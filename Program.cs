@@ -1,4 +1,5 @@
 using AddressBook.Data;
+using AddressBook.Repositorio;
 using Microsoft.EntityFrameworkCore;
 
 namespace AddressBook
@@ -16,12 +17,14 @@ namespace AddressBook
 				options.UseSqlServer(
 					builder.Configuration.GetConnectionString("DBAddress"),
 				options => options.EnableRetryOnFailure(
-					maxRetryCount: 500,
+					maxRetryCount: 50,
 					maxRetryDelay: System.TimeSpan.FromSeconds(30),
 					errorNumbersToAdd: null
 					)
 				)
 			);
+
+			builder.Services.AddScoped<IEnderecoRepositorio, EnderecoRepositorio>();
 
 			var app = builder.Build();
 
