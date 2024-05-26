@@ -20,5 +20,10 @@ namespace AddressBook.Repositorio
 			dbContext.SaveChanges();
 			return endereco;
 		}
+
+		public List<EnderecoModel> ShowAll()
+		{
+			return [.. dbContext.Enderecos]; 
+		}
 	}
 }

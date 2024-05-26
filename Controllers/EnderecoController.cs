@@ -14,7 +14,8 @@ namespace AddressBook.Controllers
 		}
 		public IActionResult Index()
 		{
-			return View();
+			var contatos = endRepositorio.ShowAll();
+			return View(contatos);
 		}
 
 		public IActionResult Novo()
