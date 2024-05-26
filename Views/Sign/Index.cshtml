@@ -23,12 +23,12 @@
 								<div class="form-group">
 									<span class="form-label">Nome de Usuário</span>
 									<input class="form-control" type="text" id="usuario" name="usuario" placeholder="Nome de Usuário">
-									@Html.ValidationMessageFor(x => x.Login)
+									<span asp-validation-for="Login" class="text-danger"></span>
 								</div>
 								<div class="form-group">
 									<span class="form-label">Senha</span>
 									<input class="form-control" type="password" id="senha" name="senha" placeholder="Senha">
-									@Html.ValidationMessageFor(x => x.Senha)
+									<span asp-validation-for="Senha" class="text-danger"></span>
 								</div>
 
 								<div class="d-grid gap-2">

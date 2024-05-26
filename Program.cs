@@ -1,5 +1,7 @@
 using AddressBook.Data;
+using AddressBook.Models;
 using AddressBook.Repositorio;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 namespace AddressBook
@@ -23,6 +25,8 @@ namespace AddressBook
 					)
 				)
 			);
+
+			builder.Services.AddValidatorsFromAssemblyContaining<LoginValidator>();
 
 			builder.Services.AddScoped<IEnderecoRepositorio, EnderecoRepositorio>();
 
