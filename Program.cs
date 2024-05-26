@@ -26,7 +26,6 @@ namespace AddressBook
 				)
 			);
 
-			builder.Services.AddValidatorsFromAssemblyContaining<LoginValidator>();
 
 			builder.Services.AddScoped<IEnderecoRepositorio, EnderecoRepositorio>();
 
