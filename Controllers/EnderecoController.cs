@@ -1,4 +1,5 @@
-﻿using AddressBook.Models;
+﻿using AddressBook.Migrations;
+using AddressBook.Models;
 using AddressBook.Repositorio;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +33,12 @@ namespace AddressBook.Controllers
 		public IActionResult Deletar()
 		{
 			return View();
+		}
+
+		public IActionResult DeletarConfirmacao(int id)
+		{
+			EnderecoModel endereco = endRepositorio.ListarID(id);
+			return View(endereco);
 		}
 
 		[HttpPost]
