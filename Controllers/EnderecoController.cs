@@ -29,12 +29,7 @@ namespace AddressBook.Controllers
 			EnderecoModel endereco = endRepositorio.ListarID(id);
 			return View(endereco);
 		}
-
-		public IActionResult Deletar()
-		{
-			return View();
-		}
-
+		
 		public IActionResult DeletarConfirmacao(int id)
 		{
 			EnderecoModel endereco = endRepositorio.ListarID(id);
