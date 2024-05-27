@@ -1,13 +1,13 @@
 # AddressBook
 
-Cadastro de endereços usando ASP.NET CORE 8 com SQL SERVER EXPRESS 2022.
+-Cadastro de endereços usando ASP.NET CORE 8 com SQL SERVER EXPRESS 2022.
 
-Cadastre, edite, delete e atualize os endereços cadastrados.
+-Cadastre, edite, delete e atualize os endereços cadastrados.
 
-Faça exportação dos dados em CSV!
+-Faça exportação dos dados em CSV!
 
-Feito usando Visual Studio 2022 Community.
+-Feito usando Visual Studio 2022 Community.
 
-# TODO
+## TODO
 
-Cadastro e login de usuários com ARGON2
+-Cadastro e login de usuários com ARGON2
