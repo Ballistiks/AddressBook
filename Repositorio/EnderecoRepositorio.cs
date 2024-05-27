@@ -1,7 +1,5 @@
 ﻿using AddressBook.Data;
-using AddressBook.Migrations;
 using AddressBook.Models;
-using Microsoft.Identity.Client;
 
 namespace AddressBook.Repositorio
 {
