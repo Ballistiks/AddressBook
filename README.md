@@ -10,4 +10,4 @@
 
 ## TODO
 
--Cadastro e login de usuários com ARGON2
+- Cadastro e login de usuários com ARGON2
