@@ -36,15 +36,5 @@ namespace AddressBook.Controllers
 			}
 			return View(usuario);
 		}
-
-		public IActionResult Login(UsuarioModel usuario)
-		{
-			if (ModelState.IsValid)
-			{
-
-			}
-
-		}
-
 	}
 }
