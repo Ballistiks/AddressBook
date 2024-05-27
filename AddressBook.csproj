@@ -7,6 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Sign\**" />
+    <Content Remove="Views\Sign\**" />
+    <EmbeddedResource Remove="Views\Sign\**" />
+    <None Remove="Views\Sign\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\SignController.cs" />
+    <Compile Remove="Repositorio\IUsuarioRepositorio.cs" />
+    <Compile Remove="Repositorio\UsuarioRepositorio.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Home\Privacy.cshtml" />
   </ItemGroup>
 
