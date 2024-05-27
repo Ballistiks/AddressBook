@@ -1,6 +1,8 @@
 ﻿using AddressBook.Models;
 using AddressBook.Repositorio;
+using Isopoh.Cryptography.Argon2;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AddressBook.Controllers
 {
@@ -28,12 +30,19 @@ namespace AddressBook.Controllers
 
 			if (ModelState.IsValid)
 			{
-				usuario.Senha = "";
+				usuario.Senha = Argon2.Hash(usuario.Senha);
 				usrRepositorio.NovoUsuario(usuario);
-
 				return RedirectToAction("Index");
 			}
 			return View(usuario);
+		}
+
+		public IActionResult Login(UsuarioModel usuario)
+		{
+			if (ModelState.IsValid)
+			{
+
+			}
 
 		}
 
